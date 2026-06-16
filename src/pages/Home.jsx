@@ -1,218 +1,163 @@
-import { useState } from 'react';
-import Card from '../components/Card.jsx';
-import Converter from '../components/Converter.jsx';
-import Button from '../components/Button.jsx';
+import React from 'react';
+import '../styles/home.css';
+import { ShieldCheck, DocumentIcon, UserCheck, SearchPulse, TargetIcon, UsersIcon, GlobeIcon, HandshakeIcon, LockIcon } from '../components/icons';
 
-const dummyRate = 0.92;
-
-const features = [
-  {
-    title: 'Lightning Fast',
-    description: 'Convert currencies in milliseconds. Real-time quotes backed by live market data.',
-    icon: '⚡',
-  },
-  {
-    title: 'Zero Hidden Fees',
-    description: 'Transparent pricing model. Know exactly what you pay before confirming.',
-    icon: '💎',
-  },
-  {
-    title: 'Global Coverage',
-    description: 'Support for 150+ currencies and counting. Reach any market worldwide.',
-    icon: '🌍',
-  },
-  {
-    title: 'Bank-Grade Security',
-    description: 'Encrypted transactions, 2FA protection, and compliance with all global standards.',
-    icon: '🔒',
-  },
-];
-
-const testimonials = [
-  {
-    name: 'Sarah Chen',
-    role: 'Founder, GlobalTrade Inc',
-    feedback: 'Rupiexo cut our forex processing time by 70%. The interface is so clean and intuitive.',
-    rating: 5,
-  },
-  {
-    name: 'Marcus Okonkwo',
-    role: 'CFO, FinServe Solutions',
-    feedback: 'The best currency platform we\'ve used. Support team is responsive and knowledgeable.',
-    rating: 5,
-  },
-  {
-    name: 'Priya Mehta',
-    role: 'Trader, Ascent Capital',
-    feedback: 'Competitive rates, zero spreads, and real-time updates. Exactly what traders need.',
-    rating: 5,
-  },
-];
-
-const benefits = [
-  { label: '1M+', value: 'Active Users' },
-  { label: '$50B+', value: 'Transactions' },
-  { label: '< 2s', value: 'Avg. Conversion' },
-  { label: '150+', value: 'Currencies' },
-];
-
-export default function Home() {
-  const [amount, setAmount] = useState('100');
-  const [currencyFrom, setCurrencyFrom] = useState('USD');
-  const [currencyTo, setCurrencyTo] = useState('EUR');
-  const [result, setResult] = useState('92.00 EUR');
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    if (name === 'amount') setAmount(value);
-    if (name === 'currencyFrom') setCurrencyFrom(value);
-    if (name === 'currencyTo') setCurrencyTo(value);
-  };
-
-  const handleSwap = () => {
-    setCurrencyFrom(currencyTo);
-    setCurrencyTo(currencyFrom);
-  };
-
-  const handleConvert = () => {
-    const converted = Number(amount || 0) * dummyRate;
-    setResult(`${converted.toFixed(2)} ${currencyTo}`);
-  };
-
+const Home = () => {
   return (
-    <section className="page home-page">
+    <div className="home-page">
       {/* Hero Section */}
-      <div className="hero-grid">
-        <div className="hero-copy">
-          <div className="eyebrow">Premium fintech exchange</div>
-          <h2>Smart Currency Exchange</h2>
-          <p>
-            Send, convert, and manage currency with a polished interface built for
-            traders and businesses who want speed with clarity. Join over 1 million users
-            managing global transactions with confidence.
-          </p>
-          <div className="hero-stats">
-            <div>
-              <strong>24/7 support</strong>
-              <span>Global fiat coverage</span>
+      <section className="hero">
+        <div className="container hero-container">
+          <div className="hero-content">
+            <div className="compliance-pill">
+              <ShieldCheck className="pill-icon" />
+              <span>Compliance First. Always.</span>
             </div>
-            <div>
-              <strong>0.9% fee</strong>
-              <span>Transparent pricing</span>
+            <h1 className="hero-title">
+              Facilitated Peer-to-Peer Transactions on a <span className="highlight-blue">Compliance-First Platform</span>
+            </h1>
+            <p className="hero-subtitle">
+              aligned with applicable regulatory and reporting standards.
+            </p>
+            <p className="hero-description">
+              We provide a secure and structured environment for verified users to conduct peer-to-peer transactions with a strong focus on compliance, transparency and record integrity.
+            </p>
+            <div className="hero-actions">
+              <a href="#" className="btn btn-primary">Learn More &rarr;</a>
+              <a href="#" className="btn btn-outline">Contact Us</a>
             </div>
           </div>
-          <div className="hero-cta">
-            <Button>Get started free</Button>
-            <a href="/rates" className="link-btn">View live rates →</a>
+          <div className="hero-graphic">
+            <img src="/hero_graphic.png" alt="Platform graphic showing security and compliance" />
           </div>
         </div>
+      </section>
 
-        <Card className="hero-card glass-card">
-          <div className="card-header">
-            <span>Currency converter</span>
-            <strong>Instant preview</strong>
+      {/* Features Section */}
+      <section className="features bg-light">
+        <div className="container features-container">
+          <div className="section-header center">
+            <h2>Built on Trust. Backed by <span className="highlight-blue">Compliance.</span></h2>
+            <p>Our core pillars ensure a safe, transparent and well-documented platform experience.</p>
           </div>
-          <Converter
-            amount={amount}
-            currencyFrom={currencyFrom}
-            currencyTo={currencyTo}
-            onChange={handleChange}
-            onSwap={handleSwap}
-            onConvert={handleConvert}
-            result={result}
-          />
-        </Card>
-      </div>
 
-      {/* Trust Badges */}
-      <div className="trust-section">
-        <div className="trust-grid">
-          {benefits.map((item) => (
-            <div key={item.label} className="trust-badge">
-              <strong>{item.label}</strong>
-              <span>{item.value}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Features Grid */}
-      <div className="features-section">
-        <div className="section-header">
-          <span className="eyebrow">Why choose Rupiexo</span>
-          <h3>Built for modern currency management</h3>
-          <p>Industry-leading features designed with traders and businesses in mind.</p>
-        </div>
-        <div className="features-grid">
-          {features.map((feature) => (
-            <Card key={feature.title} className="feature-card glass-card">
-              <div className="feature-icon">{feature.icon}</div>
-              <strong>{feature.title}</strong>
-              <p>{feature.description}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-      {/* How it works */}
-      <div className="how-it-works">
-        <div className="section-header">
-          <span className="eyebrow">Simple process</span>
-          <h3>Three steps to conversion</h3>
-        </div>
-        <div className="steps-grid">
-          <div className="step-card card">
-            <div className="step-number">1</div>
-            <strong>Enter amount</strong>
-            <p>Input your amount and select currency pair</p>
-          </div>
-          <div className="step-card card">
-            <div className="step-number">2</div>
-            <strong>Review rate</strong>
-            <p>See live rate, fees, and final amount instantly</p>
-          </div>
-          <div className="step-card card">
-            <div className="step-number">3</div>
-            <strong>Convert & Send</strong>
-            <p>Confirm exchange and funds arrive in seconds</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Testimonials */}
-      <div className="testimonials-section">
-        <div className="section-header">
-          <span className="eyebrow">Trusted worldwide</span>
-          <h3>What our users say</h3>
-        </div>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="testimonial-card glass-card">
-              <div className="stars">
-                {'⭐'.repeat(testimonial.rating)}
+          <div className="features-grid">
+            <div className="feature-card">
+              <div className="feature-icon-wrapper">
+                <ShieldCheck className="feature-icon" />
               </div>
-              <p className="feedback">"{testimonial.feedback}"</p>
-              <div className="testimonial-author">
-                <strong>{testimonial.name}</strong>
-                <span>{testimonial.role}</span>
+              <h3>Compliance Framework</h3>
+              <p>Aligned with applicable regulatory and reporting standards.</p>
+            </div>
+            
+            <div className="feature-card">
+              <div className="feature-icon-wrapper">
+                <DocumentIcon className="feature-icon" />
               </div>
-            </Card>
-          ))}
+              <h3>Record Keeping</h3>
+              <p>Structured record management and secure data retention.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon-wrapper">
+                <UserCheck className="feature-icon" />
+              </div>
+              <h3>KYC Verification</h3>
+              <p>Robust identity verification and due diligence processes.</p>
+            </div>
+
+            <div className="feature-card">
+              <div className="feature-icon-wrapper">
+                <SearchPulse className="feature-icon" />
+              </div>
+              <h3>Transaction Monitoring</h3>
+              <p>Continuous monitoring to ensure safe and compliant transactions.</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* About Section */}
+      <section className="about">
+        <div className="container about-container">
+          <div className="about-graphic">
+            <img src="/target_graphic.png" alt="Target focused graphic" />
+          </div>
+          <div className="about-content">
+            <div className="section-subtitle">ABOUT OUR PLATFORM</div>
+            <h2>A Startup Focused on <br/> <span className="highlight-blue">Compliance & Transparency</span></h2>
+            <p>
+              We are a growing startup focused on facilitating peer-to-peer transactions in India, strictly in compliance with registered FIRs and applicable laws. Our platform supports users with funds management, service support, and deposit-related functionalities in a structured and compliant manner.
+            </p>
+            
+            <div className="about-list">
+              <div className="about-list-item">
+                <UsersIcon className="list-icon" />
+                <span>User-Centric Approach</span>
+              </div>
+              <div className="about-list-item">
+                <ShieldCheck className="list-icon" />
+                <span>Compliance Driven</span>
+              </div>
+              <div className="about-list-item">
+                <LockIcon className="list-icon" />
+                <span>Secure & Transparent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="team bg-light">
+        <div className="container team-container">
+          <div className="team-content">
+            <div className="section-subtitle">OUR STRENGTH</div>
+            <h2>Supported by a <span className="highlight-blue">Worldwide Team</span></h2>
+            <p>
+              Our diverse and experienced team operates across multiple regions, working together to build technology, strengthen compliance processes and deliver a trusted platform experience.
+            </p>
+          </div>
+          
+          <div className="team-stats">
+            <div className="stat-item">
+              <UsersIcon className="stat-icon" />
+              <span>Global<br/>Team</span>
+            </div>
+            <div className="stat-item">
+              <GlobeIcon className="stat-icon" />
+              <span>Multiple<br/>Regions</span>
+            </div>
+            <div className="stat-item">
+              <ShieldCheck className="stat-icon" />
+              <span>One Goal:<br/>Trust & Compliance</span>
+            </div>
+          </div>
+
+          <div className="team-graphic">
+            <img src="/globe_graphic.png" alt="Globe showing worldwide reach" />
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <div className="cta-section card glass-card">
-        <div className="cta-content">
-          <span className="eyebrow">Ready to get started?</span>
-          <h2>Join thousands of traders and businesses</h2>
-          <p>Start converting currencies today with industry-leading rates and zero hidden fees.</p>
-          <div className="cta-buttons">
-            <Button>Create free account</Button>
-            <Button variant="secondary">Schedule demo</Button>
+      <section className="cta">
+        <div className="container cta-container">
+          <div className="cta-box">
+            <div className="cta-left">
+              <div className="cta-icon-wrapper">
+                <HandshakeIcon className="cta-icon" />
+              </div>
+              <h2>Looking for a Compliance-Focused<br/>Transaction Facilitation Partner?</h2>
+            </div>
+            <div className="cta-right">
+              <a href="#" className="btn btn-secondary">Contact Our Team &rarr;</a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
-}
+};
+
+export default Home;

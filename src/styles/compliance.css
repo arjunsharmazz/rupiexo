@@ -1,0 +1,309 @@
+/* =========================================
+   Compliance Page Specific Styles
+========================================= */
+
+/* Hero Section */
+.compliance-hero {
+  padding: 80px 0;
+  background-color: var(--card-bg);
+}
+.compliance-hero-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.compliance-hero-content {
+  flex: 1;
+}
+.compliance-hero-title {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--text-main);
+}
+.compliance-hero-description {
+  font-size: 18px;
+  margin-bottom: 32px;
+  color: var(--text-muted);
+}
+.compliance-hero-graphic {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Fallback graphic styling since generate_image failed */
+.fallback-graphic {
+  background: linear-gradient(135deg, var(--primary-light) 0%, #ffffff 100%);
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  position: relative;
+  text-align: center;
+  animation: float 6s ease-in-out infinite;
+}
+.fallback-graphic .giant-icon {
+  color: var(--primary);
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+.fallback-graphic h3 {
+  font-size: 24px;
+  color: var(--primary-dark);
+}
+
+/* Main Content Layout */
+.compliance-main {
+  padding: 80px 0;
+  background-color: var(--bg-color);
+}
+.compliance-main-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+}
+.compliance-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+/* Compliance Pillars (Left Column) */
+.pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pillar-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.pillar-graphic {
+  background-color: var(--primary-light);
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.pillar-graphic .p-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+}
+.pillar-graphic .p-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background-color: var(--primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+.pillar-graphic .p-badge svg {
+  width: 14px;
+  height: 14px;
+}
+.pillar-content h3 {
+  font-size: 20px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.pillar-content p {
+  font-size: 14px;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Compliance Journey Timeline (Right Column) */
+.journey-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+.journey-card h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+.journey-card > p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-size: 15px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.timeline-item {
+  display: flex;
+  gap: 24px;
+  position: relative;
+}
+/* The connecting line */
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 30px; /* middle of the icon (60px / 2) */
+  bottom: -30px;
+  width: 2px;
+  background-image: linear-gradient(to bottom, var(--primary) 50%, transparent 50%);
+  background-size: 2px 10px;
+}
+.timeline-icon-wrap {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 2px solid var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,82,204,0.1);
+}
+.timeline-icon-wrap .t-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--primary);
+}
+.timeline-icon-wrap .step-num {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline-content {
+  padding-top: 8px;
+}
+.timeline-content h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+.timeline-content p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Registration Details Box */
+.registration-box {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+.reg-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.reg-item:not(:last-child) {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+.reg-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.reg-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.reg-content p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.reg-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+}
+
+/* CTA Banner is reused from home.css */
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .compliance-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .compliance-hero-content .pill-box {
+    margin: 0 auto;
+    text-align: left;
+  }
+  .compliance-main-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .compliance-hero, .compliance-main {
+    padding: 50px 0;
+  }
+  .compliance-hero-title {
+    font-size: 36px;
+  }
+  .journey-card {
+    padding: 30px 20px;
+  }
+  .pillar-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .timeline-item:not(:last-child)::after {
+    left: 30px;
+  }
+}

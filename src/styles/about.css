@@ -1,0 +1,264 @@
+/* =========================================
+   About Page Hero
+========================================= */
+.about-hero {
+  padding: 80px 0 60px;
+  background-color: var(--card-bg);
+}
+.about-hero-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.about-hero-content {
+  flex: 1;
+}
+.about-hero-content .section-subtitle {
+  margin-bottom: 16px;
+}
+.about-hero-title {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.about-hero-description {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+.about-hero-graphic {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.about-hero-graphic img {
+  width: 100%;
+  max-width: 600px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.pill-box {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.pill-box .pill-icon {
+  color: var(--primary);
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.pill-box p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+/* =========================================
+   Company Overview
+========================================= */
+.company-overview {
+  padding: 80px 0;
+  background-color: var(--card-bg);
+}
+.company-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.company-image {
+  flex: 1;
+}
+.company-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+.company-content {
+  flex: 1;
+}
+.company-content p {
+  margin-bottom: 16px;
+}
+
+/* =========================================
+   Mission & Vision
+========================================= */
+.mission-vision {
+  padding: 0 0 80px;
+  background-color: var(--card-bg);
+}
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.mv-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.mv-icon-wrapper {
+  background-color: white;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+.mv-icon {
+  color: var(--primary);
+  width: 48px;
+  height: 48px;
+}
+.mv-content h3 {
+  color: var(--primary);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+/* =========================================
+   Worldwide Team
+========================================= */
+.about-team {
+  padding: 80px 0;
+  background-color: var(--card-bg);
+}
+.about-team-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+.about-team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+}
+.team-left {
+  display: flex;
+  flex-direction: column;
+}
+.team-left p {
+  margin-bottom: 40px;
+}
+.team-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.team-stat {
+  text-align: center;
+}
+.team-stat .stat-icon {
+  color: var(--primary);
+  width: 32px;
+  height: 32px;
+  margin-bottom: 12px;
+}
+.team-stat h4 {
+  color: var(--primary);
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.team-stat p {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  text-transform: capitalize;
+}
+.team-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-right img {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* =========================================
+   Values
+========================================= */
+.values {
+  padding: 80px 0 160px; /* Extra bottom padding for CTA overlap */
+  background-color: var(--bg-color);
+}
+.values-header {
+  margin-bottom: 40px;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.value-card {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+.value-card .feature-icon-wrapper {
+  background-color: var(--bg-color); /* overriding home.css specific if needed */
+}
+
+/* =========================================
+   Responsive Adjustments
+========================================= */
+@media (max-width: 1024px) {
+  .about-hero-container, .company-container, .about-team-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+  .mv-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .team-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pill-box {
+    text-align: left; /* Keep left aligned for readability */
+  }
+  .about-team-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero, .company-overview, .mission-vision, .about-team, .values {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .about-hero-title {
+    font-size: 36px;
+  }
+  .team-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
