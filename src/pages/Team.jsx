@@ -329,14 +329,14 @@ const Team = () => {
       </section>
 
       {/* ── FIU Badge ── */}
-      <section className="team-fiu-badge">
+      {/* <section className="team-fiu-badge">
         <div className="container">
           <div className="fiu-pill">
             <span className="fiu-pill-dot"></span>
             Rupiexo India Pvt Ltd – In process of FIU-IND registration under PMLA 2002.
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA ── */}
       <section className="cta">
