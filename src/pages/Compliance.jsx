@@ -101,7 +101,7 @@ const Compliance = () => {
                   <div className="p-badge"><ShieldCheck /></div>
                 </div>
                 <div className="pillar-content">
-                  <h3>5. GST & Business Documentation</h3>
+                  <h3>5. GST &amp; Business Documentation</h3>
                   <p>We are fully registered and maintain all applicable business documentation including GST registration and corporate identity records.</p>
                 </div>
               </div>
@@ -205,7 +205,7 @@ const Compliance = () => {
         </div>
       </section>
 
-      {/* CTA Section (Reused styling) */}
+      {/* CTA Section */}
       <section className="cta" style={{ marginTop: '-80px' }}>
         <div className="container cta-container">
           <div className="cta-box">

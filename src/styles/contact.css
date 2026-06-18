@@ -401,14 +401,153 @@
     padding: 0;
   }
 }
+
 @media (max-width: 640px) {
   .contact-hero, .contact-main, .trust-banner-section {
     padding: 50px 0;
   }
   .contact-hero-title {
-    font-size: 36px;
+    font-size: 28px;
   }
+  .contact-hero-description {
+    font-size: 15px;
+  }
+
+  /* Envelope */
+  .envelope-illustration {
+    width: 220px;
+    height: 180px;
+    transform: scale(0.85);
+  }
+  .env-back, .env-front, .env-flap {
+    width: 200px;
+    height: 140px;
+  }
+  .env-letter {
+    width: 170px;
+    height: 160px;
+    padding: 20px 14px;
+  }
+  .env-bubble {
+    width: 44px;
+    height: 44px;
+    top: -12px;
+    right: -12px;
+  }
+  .env-bubble .bubble-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Form */
   .form-card {
-    padding: 30px 20px;
+    padding: 28px 16px;
+  }
+  .form-card h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  .contact-form {
+    gap: 18px;
+  }
+  .input-wrapper input,
+  .input-wrapper textarea {
+    padding: 12px 14px 12px 42px;
+    font-size: 14px;
+  }
+  .submit-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+  .form-footer {
+    margin-top: 16px;
+  }
+  .form-footer p {
+    font-size: 12px;
+  }
+
+  /* Info cards */
+  .info-main-card {
+    padding: 28px 16px;
+  }
+  .info-main-card h2 {
+    font-size: 20px;
+  }
+  .info-item {
+    padding: 18px 14px;
+    gap: 14px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .info-icon-wrapper {
+    margin: 0 auto;
+  }
+  .info-content h3 {
+    font-size: 15px;
+  }
+  .info-content p {
+    font-size: 12px;
+  }
+  .info-link {
+    justify-content: center;
+    font-size: 13px;
+  }
+
+  /* Response time card */
+  .response-time-card {
+    padding: 18px 14px;
+    gap: 14px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .clock-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .response-content h4 {
+    font-size: 16px;
+  }
+
+  /* Trust Banner */
+  .trust-banner {
+    padding: 28px 20px;
+    border-radius: 16px;
+    gap: 20px;
+  }
+  .trust-icon-left {
+    width: 48px;
+    height: 48px;
+  }
+  .trust-icon-left .t-shield {
+    width: 24px;
+    height: 24px;
+  }
+  .trust-text h3 {
+    font-size: 18px;
+  }
+  .trust-text p {
+    font-size: 13px;
+  }
+  .trust-graphic-right .bank-icon {
+    width: 60px;
+    height: 60px;
   }
 }
+
+@media (max-width: 400px) {
+  .contact-hero-title {
+    font-size: 24px;
+  }
+  .form-card {
+    padding: 24px 12px;
+  }
+  .info-main-card {
+    padding: 24px 12px;
+  }
+  .input-wrapper input,
+  .input-wrapper textarea {
+    padding: 10px 12px 10px 38px;
+    font-size: 13px;
+  }
+}
+

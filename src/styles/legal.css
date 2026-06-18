@@ -68,7 +68,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .legal-container {
-    padding: 40px 30px;
+    padding: 40px 24px;
   }
   .legal-header h1 {
     font-size: 28px;
@@ -80,9 +80,41 @@
     padding: 40px 0;
   }
   .legal-container {
-    padding: 30px 20px;
+    padding: 28px 16px;
+    border-radius: 16px;
+  }
+  .legal-header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+  }
+  .legal-header h1 {
+    font-size: 24px;
+  }
+  .legal-header p {
+    font-size: 13px;
+  }
+  .legal-content h2 {
+    font-size: 18px;
+    margin-top: 28px;
+  }
+  .legal-content p {
+    font-size: 14px;
   }
   .legal-highlight-box {
     padding: 16px;
+    margin: 24px 0;
+  }
+  .legal-highlight-box p {
+    font-size: 14px;
   }
 }
+
+@media (max-width: 400px) {
+  .legal-container {
+    padding: 24px 12px;
+  }
+  .legal-header h1 {
+    font-size: 22px;
+  }
+}
+

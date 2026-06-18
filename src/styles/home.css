@@ -449,6 +449,9 @@ p {
     flex-direction: column;
     text-align: center;
   }
+  .hero-content {
+    max-width: 100%;
+  }
   .hero-actions {
     justify-content: center;
   }
@@ -478,10 +481,14 @@ p {
   .cta-left {
     flex-direction: column;
   }
+  .cta-left h2 {
+    font-size: 22px;
+  }
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -527,27 +534,188 @@ p {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  /* Footer 2-col on tablet */
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  /* Features 2-col on tablet */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  /* Team container padding */
+  .team-container {
+    padding: 40px 24px;
+  }
 }
 
 @media (max-width: 640px) {
+  /* ── Global spacing ── */
   .hero, .features, .about, .team, .cta {
-    padding: 60px 0;
+    padding: 50px 0;
   }
+
+  /* ── Hero ── */
+  .hero-title {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  .hero-graphic img {
+    max-width: 280px;
+  }
+  .compliance-pill {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  /* ── Features ── */
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .footer-container {
-    grid-template-columns: 1fr;
+  .feature-card {
+    padding: 28px 20px;
+  }
+  .section-header h2 {
+    font-size: 24px;
+  }
+  .section-header p {
+    font-size: 14px;
+  }
+
+  /* ── About ── */
+  .about-container {
+    gap: 40px;
+  }
+  .about-graphic img {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+  .about-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .about-list-item {
+    justify-content: center;
+  }
+
+  /* ── Team ── */
+  .team-container {
+    padding: 32px 20px;
+    border-radius: 16px;
+    gap: 32px;
   }
   .team-stats {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
   }
-  .about-list {
-    flex-direction: column;
+  .stat-item {
+    font-size: 13px;
   }
-  h1 { font-size: 36px; }
-  h2 { font-size: 28px; }
-  .hero-title { font-size: 36px; }
-  .footer { padding-top: 60px; }
+  .team-graphic img {
+    max-width: 250px;
+  }
+
+  /* ── CTA ── */
+  .cta {
+    margin-bottom: -60px;
+  }
+  .cta-box {
+    padding: 28px 20px;
+    border-radius: 16px;
+    gap: 20px;
+  }
+  .cta-left h2 {
+    font-size: 18px;
+  }
+  .cta-icon-wrapper {
+    padding: 12px;
+  }
+  .cta-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .btn-secondary {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding-top: 60px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-brand {
+    text-align: center;
+  }
+  .footer-logo {
+    justify-content: center;
+  }
+  .footer-desc {
+    font-size: 13px;
+  }
+  .footer-links {
+    text-align: center;
+  }
+  .footer-links h4,
+  .footer-contact h4 {
+    margin-bottom: 16px;
+  }
+  .footer-contact {
+    text-align: center;
+  }
+  .footer-contact .contact-item {
+    justify-content: center;
+  }
+  .footer-bottom {
+    font-size: 12px;
+    padding: 16px 10px;
+  }
+
+  /* ── Typography ── */
+  h1 { font-size: 28px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 18px; }
 }
+
+/* ── Very small screens ── */
+@media (max-width: 400px) {
+  .container {
+    padding: 0 16px;
+  }
+  .hero-title {
+    font-size: 24px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  .cta-left h2 {
+    font-size: 16px;
+  }
+  .nav-links {
+    padding: 20px 16px;
+  }
+}
+

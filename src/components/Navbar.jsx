@@ -34,6 +34,7 @@ const Navbar = () => {
         <nav className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <NavLink to="/" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} onClick={closeMenu}>Home</NavLink>
           <NavLink to="/about" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} onClick={closeMenu}>About Us</NavLink>
+          <NavLink to="/team" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} onClick={closeMenu}>Team</NavLink>
           <NavLink to="/compliance" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} onClick={closeMenu}>Compliance</NavLink>
           <NavLink to="/contact" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} onClick={closeMenu}>Contact Us</NavLink>
           <Link to="/contact" className="btn btn-primary nav-btn-mobile" onClick={closeMenu}>Get In Touch</Link>

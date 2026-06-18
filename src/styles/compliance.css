@@ -288,22 +288,141 @@
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 640px) {
   .compliance-hero, .compliance-main {
     padding: 50px 0;
   }
   .compliance-hero-title {
-    font-size: 36px;
+    font-size: 28px;
   }
+  .compliance-hero-description {
+    font-size: 15px;
+  }
+  .compliance-hero-graphic {
+    display: none;
+  }
+
+  /* Pill box */
+  .pill-box {
+    padding: 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pill-box p {
+    font-size: 13px;
+  }
+
+  /* Journey card */
   .journey-card {
-    padding: 30px 20px;
+    padding: 28px 16px;
   }
+  .journey-card h2 {
+    font-size: 22px;
+  }
+
+  /* Pillar cards */
   .pillar-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px 16px;
+  }
+  .pillar-graphic {
+    width: 64px;
+    height: 64px;
+  }
+  .pillar-graphic .p-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .pillar-content h3 {
+    font-size: 17px;
+  }
+  .pillar-content p {
+    font-size: 13px;
+  }
+
+  /* Timeline */
+  .timeline {
+    gap: 24px;
+  }
+  .timeline-item {
+    gap: 16px;
+  }
+  .timeline-icon-wrap {
+    width: 48px;
+    height: 48px;
+  }
+  .timeline-icon-wrap .t-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .timeline-icon-wrap .step-num {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
   }
   .timeline-item:not(:last-child)::after {
-    left: 30px;
+    left: 24px;
+    top: 50px;
+    bottom: -24px;
+  }
+  .timeline-content h4 {
+    font-size: 16px;
+  }
+  .timeline-content p {
+    font-size: 13px;
+  }
+
+  /* Registration box */
+  .registration-box {
+    padding: 24px 16px;
+  }
+  .reg-item {
+    gap: 14px;
+  }
+  .reg-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .reg-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .reg-content p {
+    font-size: 12px;
+  }
+  .reg-content h4 {
+    font-size: 15px;
+  }
+
+  /* Fallback graphic */
+  .fallback-graphic {
+    padding: 40px;
+  }
+  .fallback-graphic .giant-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .fallback-graphic h3 {
+    font-size: 18px;
   }
 }
+
+@media (max-width: 400px) {
+  .compliance-hero-title {
+    font-size: 24px;
+  }
+  .pillar-card {
+    padding: 16px 12px;
+  }
+  .journey-card {
+    padding: 20px 12px;
+  }
+  .registration-box {
+    padding: 20px 12px;
+  }
+}
+
