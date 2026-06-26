@@ -4,7 +4,7 @@ import '../styles/team.css';
 import { ShieldCheck } from '../components/icons';
 
 import shivaImg from '../assets/shiva.png';
-import rohitImg from '../assets/rohit.png';
+// import rohitImg from '../assets/rohit.png';
 import shivamImg from '../assets/shivam.png';
 import arjunImg from '../assets/arjun.png';
 import nazimImg from '../assets/nazim.png';
@@ -36,29 +36,6 @@ const ceoProfile = {
 };
 
 const teamProfiles = [
-  {
-    initials: "RK",
-    name: "Rohit Kumar",
-    title: "Senior Manager – HR & Compliance",
-    image: rohitImg,
-    bio: [
-      "Rohit Kumar is an experienced HR and Compliance professional with over 10 years of expertise across diverse sectors including Education, Aviation, and Real Estate. He brings extensive knowledge in human resource management, regulatory compliance, internal audits, and legal coordination.",
-      "At Rupiexo, he plays a key role in strengthening organizational governance, ensuring adherence to compliance standards, and building robust HR frameworks that support sustainable business growth.",
-    ],
-    meta: [
-      { label: "Experience", value: "10+ Years" },
-      { label: "Qualification", value: "MBA in HR" },
-    ],
-    expertise: [
-      "Human Resource Management",
-      "Regulatory & Corporate Compliance",
-      "Legal Coordination",
-      "Internal Audit & Risk Management",
-    ],
-    email: "compliance@exorain.com",
-    phone: "+91 94857 76661",
-    tel: "+919485776661",
-  },
   {
     initials: "ST",
     name: "Shivam Tripathi",
